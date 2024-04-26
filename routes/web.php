@@ -9,7 +9,7 @@ Route::middleware([AuthenticateMiddleware::class])->group(function () {
         return view('home');
     });
 
-    Route::post('/logout', function () {
+    Route::get('/logout', function () {
         Auth::logout();
         return redirect('/login')->with('success', 'Logged out successfully');
     })->name('logout');
