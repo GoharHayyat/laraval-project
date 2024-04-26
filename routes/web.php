@@ -7,7 +7,12 @@ use App\Http\Middleware\AuthenticateMiddleware;
 Route::middleware([AuthenticateMiddleware::class])->group(function () {
     Route::get('/home', function () {
         return view('home');
-    });
+    })->name('home');
+
+    Route::get('/contactus', function () {
+        return view('contactus');
+    })->name('contactus');
+
 
     Route::get('/logout', function () {
         Auth::logout();

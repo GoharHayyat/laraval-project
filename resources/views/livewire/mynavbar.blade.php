@@ -11,13 +11,13 @@
                 <a class="navbar-brand" href="/">mywebsite</a>
             </div>
             <ul class="nav navbar-nav">
-                <li ><a href="/home">Home</a></li>
+                <li ><a  wire:navigate {{Route::is('home')}} href="/home">Home</a></li>
                 
-                <li><a href="#">contact us</a></li>
+                <li><a wire:navigate {{Route::is('contactus')}} href="/contactus">contact us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#" wire:click="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                <li><a href="" wire:click="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             </ul>
         </div>
     </nav>
