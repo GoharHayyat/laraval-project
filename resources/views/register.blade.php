@@ -31,12 +31,19 @@
     </div>
     <div class="mb-3">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
     </div>
    
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-black" onclick="redirectTologin()">login</button>
+
   </form>
 </div>
+<script>
+  function redirectTologin() {
+    window.location.href = '/login';
+  }
+</script>
 
 </body>
 </html>

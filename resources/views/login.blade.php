@@ -10,7 +10,7 @@
 <body>
 
 <div class="container mt-3">
-  <h2>login form</h2>
+  <h2>Login form</h2>
 @if (@Session::has('error'))
 
 <div>
@@ -19,7 +19,7 @@
     
     
 @endif
-  <form action="{{route('login.post')}}" method="POST">
+  <form action="{{ route('login.post') }}" method="POST">
     @csrf
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
@@ -28,12 +28,18 @@
     <div class="mb-3">
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-
-      </div>
+    </div>
    
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-black" onclick="redirectTosignup()">Signup</button>
   </form>
 </div>
+
+<script>
+  function redirectTosignup() {
+    window.location.href = '/';
+  }
+</script>
 
 </body>
 </html>
