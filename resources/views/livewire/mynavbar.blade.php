@@ -11,9 +11,9 @@
                 <a class="navbar-brand" href="/">mywebsite</a>
             </div>
             <ul class="nav navbar-nav">
-                <li ><a  wire:navigate {{Route::is('home')}} href="/home">Home</a></li>
+                <li class="{{ Route::is('home') ? 'active' : '' }}" ><a wire:navigate {{Route::is('home')?'active':''}} href="/home">Home</a></li>
                 
-                <li><a wire:navigate {{Route::is('contactus')}} href="/contactus">contact us</a></li>
+                <li class="{{ Route::is('contactus') ? 'active' : '' }}"><a wire:navigate {{Route::is('contactus')}} href="/contactus">contact us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
