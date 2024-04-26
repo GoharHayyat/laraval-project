@@ -10,6 +10,10 @@ class Mynavbar extends Component
     {
         return Redirect::to('/logout');
     }
+    public function login()
+    {
+        return Redirect::to('/login');
+    }
     public function render()
     {
         return view('livewire.mynavbar');

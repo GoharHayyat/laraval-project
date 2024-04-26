@@ -11,13 +11,21 @@
                 <a class="navbar-brand" href="/">mywebsite</a>
             </div>
             <ul class="nav navbar-nav">
+                @auth
                 <li class="{{ Route::is('home') ? 'active' : '' }}" ><a wire:navigate {{Route::is('home')?'active':''}} href="/home">Home</a></li>
                 
                 <li class="{{ Route::is('contactus') ? 'active' : '' }}"><a wire:navigate {{Route::is('contactus')}} href="/contactus">contact us</a></li>
+                @endauth
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="" wire:click="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                @auth
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{ auth()->user()->name }}</a></li>
+                    <li><a href="#" wire:click="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                @else
+                    <li><a href="#" wire:click="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                @endauth
+                {{-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{ auth()->user()->name }}</a></li>
+                <li><a href="" wire:click="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li> --}}
             </ul>
         </div>
     </nav>
